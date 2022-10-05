@@ -1,0 +1,132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B909142A-C28E-41A1-89C4-5D1F0CFB9E5E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ValueObjects\ValueObjects.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ValueObjectsTests\ValueObjects_Tests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BoundariesCatalog\BoundaiersCatalog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BoundariesUnit\BoundariesUnit.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BoundariesLib\BoundariesLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Aggreagate\Aggregate.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AggregateTests\Aggregate_Tests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Aggregates\Aggregates.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BuildingBlocks\BuildingBlocks.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ValueObjects">
+        <MSBuild Projects="ValueObjects\ValueObjects.dproj"/>
+    </Target>
+    <Target Name="ValueObjects:Clean">
+        <MSBuild Projects="ValueObjects\ValueObjects.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ValueObjects:Make">
+        <MSBuild Projects="ValueObjects\ValueObjects.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ValueObjects_Tests">
+        <MSBuild Projects="ValueObjectsTests\ValueObjects_Tests.dproj"/>
+    </Target>
+    <Target Name="ValueObjects_Tests:Clean">
+        <MSBuild Projects="ValueObjectsTests\ValueObjects_Tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ValueObjects_Tests:Make">
+        <MSBuild Projects="ValueObjectsTests\ValueObjects_Tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BoundaiersCatalog">
+        <MSBuild Projects="BoundariesCatalog\BoundaiersCatalog.dproj"/>
+    </Target>
+    <Target Name="BoundaiersCatalog:Clean">
+        <MSBuild Projects="BoundariesCatalog\BoundaiersCatalog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BoundaiersCatalog:Make">
+        <MSBuild Projects="BoundariesCatalog\BoundaiersCatalog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BoundariesUnit">
+        <MSBuild Projects="BoundariesUnit\BoundariesUnit.dproj"/>
+    </Target>
+    <Target Name="BoundariesUnit:Clean">
+        <MSBuild Projects="BoundariesUnit\BoundariesUnit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BoundariesUnit:Make">
+        <MSBuild Projects="BoundariesUnit\BoundariesUnit.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BoundariesLib">
+        <MSBuild Projects="BoundariesLib\BoundariesLib.dproj"/>
+    </Target>
+    <Target Name="BoundariesLib:Clean">
+        <MSBuild Projects="BoundariesLib\BoundariesLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BoundariesLib:Make">
+        <MSBuild Projects="BoundariesLib\BoundariesLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Aggregate">
+        <MSBuild Projects="Aggreagate\Aggregate.dproj"/>
+    </Target>
+    <Target Name="Aggregate:Clean">
+        <MSBuild Projects="Aggreagate\Aggregate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Aggregate:Make">
+        <MSBuild Projects="Aggreagate\Aggregate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Aggregate_Tests">
+        <MSBuild Projects="AggregateTests\Aggregate_Tests.dproj"/>
+    </Target>
+    <Target Name="Aggregate_Tests:Clean">
+        <MSBuild Projects="AggregateTests\Aggregate_Tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Aggregate_Tests:Make">
+        <MSBuild Projects="AggregateTests\Aggregate_Tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Aggregates">
+        <MSBuild Projects="Aggregates\Aggregates.dproj"/>
+    </Target>
+    <Target Name="Aggregates:Clean">
+        <MSBuild Projects="Aggregates\Aggregates.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Aggregates:Make">
+        <MSBuild Projects="Aggregates\Aggregates.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BuildingBlocks">
+        <MSBuild Projects="BuildingBlocks\BuildingBlocks.dproj"/>
+    </Target>
+    <Target Name="BuildingBlocks:Clean">
+        <MSBuild Projects="BuildingBlocks\BuildingBlocks.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BuildingBlocks:Make">
+        <MSBuild Projects="BuildingBlocks\BuildingBlocks.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ValueObjects;ValueObjects_Tests;BoundaiersCatalog;BoundariesUnit;BoundariesLib;Aggregate;Aggregate_Tests;Aggregates;BuildingBlocks"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ValueObjects:Clean;ValueObjects_Tests:Clean;BoundaiersCatalog:Clean;BoundariesUnit:Clean;BoundariesLib:Clean;Aggregate:Clean;Aggregate_Tests:Clean;Aggregates:Clean;BuildingBlocks:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ValueObjects:Make;ValueObjects_Tests:Make;BoundaiersCatalog:Make;BoundariesUnit:Make;BoundariesLib:Make;Aggregate:Make;Aggregate_Tests:Make;Aggregates:Make;BuildingBlocks:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

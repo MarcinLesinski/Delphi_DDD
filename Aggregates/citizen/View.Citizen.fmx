@@ -1,0 +1,36 @@
+object CitizenForm: TCitizenForm
+  Left = 855
+  Top = 405
+  Caption = 'Citizen'
+  ClientHeight = 138
+  ClientWidth = 270
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  Left = 855
+  Top = 405
+  DesignerMasterStyle = 0
+  object giveMandate100Button: TButton
+    Position.X = 56.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'donetoolbutton'
+    TabOrder = 1
+    Text = 'give mandate 100'
+    OnClick = giveMandate100ButtonClick
+  end
+  object payMandateButton: TButton
+    Position.X = 56.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'donetoolbutton'
+    TabOrder = 0
+    Text = 'pay mandate'
+    OnClick = payMandateButtonClick
+  end
+end
